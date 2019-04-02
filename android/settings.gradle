@@ -1,0 +1,3 @@
+rootProject.name = 'goNativeMod3'
+
+include ':app'
