@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-import todos from '~/store/reducers/todos';
+import login from '~/store/reducers/login';
 
 export default combineReducers({
-  todos,
+  login,
 });
