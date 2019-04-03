@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
-import login from '~/store/reducers/login';
+import login from './login';
+import repositories from './repositories';
 
 export default combineReducers({
   login,
+  repositories,
 });
