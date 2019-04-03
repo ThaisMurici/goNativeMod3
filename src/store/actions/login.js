@@ -3,7 +3,7 @@ export const loginRequest = username => ({
   payload: { username },
 });
 export const loginSuccess = username => ({
-  type: 'LOGIN_SUCCESSS',
+  type: 'LOGIN_SUCCESS',
   payload: { username },
 });
 

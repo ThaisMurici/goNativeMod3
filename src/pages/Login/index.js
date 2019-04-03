@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as LoginActions from '~/store/actions/login';
 
+import { ActivityIndicator } from 'react-native';
+
 import {
   Container, Input, Button, ButtonText, Error,
 } from './styles';
-
-import api from '~/services/api';
 
 class Login extends Component {
   state = {
@@ -23,7 +23,7 @@ class Login extends Component {
 
   render() {
     const { username } = this.state;
-    const { error } = this.props;
+    const { error, loading } = this.props;
     return (
       <Container>
         {error && <Error>User does not exist.</Error>}
@@ -35,7 +35,11 @@ class Login extends Component {
           placeholder="Type your username here"
         />
         <Button onPress={this.handleSubmit}>
-          <ButtonText>Login</ButtonText>
+          {loading ? (
+            <ActivityIndicator size="small" color="#fff" />
+          ) : (
+            <ButtonText>Login</ButtonText>
+          )}
         </Button>
       </Container>
     );
@@ -44,6 +48,7 @@ class Login extends Component {
 
 const mapStateToProps = state => ({
   error: state.login.error,
+  loading: state.login.loading,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(LoginActions, dispatch);
