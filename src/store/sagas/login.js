@@ -2,7 +2,7 @@ import { call, put } from 'redux-saga/effects';
 import api from '~/services/api';
 
 import { navigate } from '~/services/navigation';
-import * as LoginActions from '~/store/actions/login';
+import { Creators as LoginActions } from '~/store/ducks/login';
 
 export default function* login(action) {
   try {
