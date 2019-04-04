@@ -6,7 +6,7 @@ import rootSaga from './sagas';
 
 const middlewares = [];
 
-const sagaMonitor = __DEV__ ? console.tron.createSagaMonitor : null;
+const sagaMonitor = __DEV__ ? console.tron.createSagaMonitor() : null;
 const sagaMiddleware = createSagaMiddleware({ sagaMonitor });
 
 middlewares.push(sagaMiddleware);
